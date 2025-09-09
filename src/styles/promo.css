@@ -1,0 +1,57 @@
+.promo_section {
+  display: none; /* default hidden */
+  height: 60px;
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.promo_section.show {
+  display: flex; /* tampil kalau ada class show */
+}
+
+.promo_wrapper {
+  display: flex;
+  width: 200%; /* isi 2x untuk seamless */
+  animation: promo-marquee 8s linear infinite;
+}
+
+/* === PAUSE ON HOVER === */
+.promo_section:hover .promo_wrapper {
+  animation-play-state: paused;
+}
+
+.promo_content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 50%; /* bagi dua: asli & clone */
+}
+
+.promo_item {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.promo_timeline {
+  font-weight: var(--font-weight-bold);
+  margin-right: var(--spacing-sm);
+}
+
+.promo_jenis {
+  font-weight: var(--font-weight-normal);
+}
+
+@keyframes promo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

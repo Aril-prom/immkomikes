@@ -1,0 +1,300 @@
+/* ===== PRODUK SECTION STYLES ===== */
+
+.produk_section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--bg-light);
+  position: relative;
+}
+
+.produk_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+  z-index: 1;
+}
+
+.produk_section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.produk_section .section-header {
+  margin-bottom: var(--spacing-3xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.produk_section .section-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+/* Updated section title accent to use primary color */
+.produk_section .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: var(--border-radius-sm);
+}
+
+.produk_section .section-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-normal);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Product Cards */
+.produk-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-all);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.produk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Product Image */
+.product-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-all);
+}
+
+.produk-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Removed all product badge styles since badges are removed from HTML */
+
+/* Product Content */
+.product-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Updated product title color to use primary color */
+.product-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.product-description {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.price-current {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+.price-unit {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Updated product CTA button to use primary color instead of success color */
+.product-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: 12px 24px;
+  border-radius: var(--btn-border-radius);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: var(--transition-all);
+  border: none;
+  cursor: pointer;
+}
+
+.product-cta:hover {
+  background: var(--primary-hover);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-hover);
+}
+
+.product-cta i {
+  font-size: 1.1em;
+}
+
+/* Updated view all button to use primary color variables */
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--primary-gradient);
+  color: var(--text-white) !important;
+  padding: 16px 32px;
+  box-shadow: var(--shadow-primary);
+  border-radius: var(--btn-border-radius);
+  text-decoration: none;
+  font-weight: var(--btn-font-weight);
+  transition: var(--transition-all);
+  margin-top: 2rem;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-hover);
+  color: var(--text-white) !important;
+}
+
+.view-all-btn i {
+  transition: var(--transition-all);
+}
+
+.view-all-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .produk_section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .produk_section .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .produk_section .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .produk_section .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .product-content {
+    padding: 1.25rem;
+  }
+
+  .product-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .price-current {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .produk_section::before {
+    height: 60px;
+  }
+
+  .produk_section .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-content {
+    padding: 1rem;
+  }
+
+  .product-description {
+    font-size: var(--font-size-sm);
+    margin-bottom: 1rem;
+  }
+
+  .product-cta {
+    padding: 10px 20px;
+    font-size: var(--font-size-sm);
+  }
+
+  .view-all-btn {
+    padding: 14px 28px;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.produk-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.produk-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.produk-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.produk-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.produk-card:nth-child(4) {
+  animation-delay: 0.4s;
+}

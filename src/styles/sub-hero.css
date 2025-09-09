@@ -1,0 +1,54 @@
+.sub-hero_section {
+  position: relative;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.sub-hero_overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.sub-hero_title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-white);
+  font-family: var(--font-primary);
+}
+
+.sub-hero_subtitle {
+  font-size: var(--font-size-2xl); /* 16px */
+  font-weight: var(--font-weight-normal);
+  color: var(--text-white);
+  font-family: var(--font-secondary);
+}
+
+/* Khusus halaman produk */
+.sub-hero-produk {
+  background-image: url("../images/sh-produk.png");
+}
+
+/* Khusus halaman tentang */
+.sub-hero-tentang {
+  background-image: url("../images/sh-tentang-kami.png");
+}
+
+/* Khusus halaman blog */
+.sub-hero-blog {
+  background-image: url("../images/sh-blog.png");
+}
+
+/* Khusus halaman kontak */
+.sub-hero-blog {
+  background-image: url("../images/sh-kontak.png");
+}
