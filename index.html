@@ -274,46 +274,33 @@
         <!-- Visi Misi Cards -->
         <div class="row g-4 mb-5">
           <!-- Visi Card -->
-          <div class="col-lg-6 col-md-12">
-            <div class="visi-misi-card visi-card">
-              <div class="card-icon">
-                <i class="fas fa-eye"></i>
-              </div>
-              <div class="card-content">
-                <h3 class="card-title">Visi Kami</h3>
-                <p class="card-text">
-                  Menjadi perusahaan perikanan terdepan di Indonesia yang
-                  menyediakan produk ikan segar berkualitas tinggi, terpercaya,
-                  dan berkelanjutan untuk memenuhi kebutuhan gizi keluarga
-                  Indonesia serta berkontribusi pada ketahanan pangan nasional.
-                </p>
-              </div>
-            </div>
-          </div>
+<div class="col-lg-6 col-md-12">
+  <div class="visi-misi-card visi-card">
+    <div class="card-icon">
+      <i class="fas fa-eye"></i>
+    </div>
+    <div class="card-content">
+      <h3 class="card-title">Visi Kami</h3>
+      <p id="visi-text" class="card-text">Loading visi...</p>
+    </div>
+  </div>
+</div>
 
-          <!-- Misi Card -->
-          <div class="col-lg-6 col-md-12">
-            <div class="visi-misi-card misi-card">
-              <div class="card-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <div class="card-content">
-                <h3 class="card-title">Misi Kami</h3>
-                <ul class="misi-list">
-                  <li>
-                    Menyediakan ikan segar berkualitas tinggi dengan harga
-                    terjangkau
-                  </li>
-                  <li>
-                    Membangun sistem distribusi yang efisien dan berkelanjutan
-                  </li>
-                  <li>Memberdayakan nelayan lokal dan komunitas perikanan</li>
-                  <li>Menerapkan praktik perikanan yang ramah lingkungan</li>
-                  <li>Memberikan pelayanan terbaik kepada seluruh pelanggan</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<!-- Misi Card -->
+<div class="col-lg-6 col-md-12">
+  <div class="visi-misi-card misi-card">
+    <div class="card-icon">
+      <i class="fas fa-bullseye"></i>
+    </div>
+    <div class="card-content">
+      <h3 class="card-title">Misi Kami</h3>
+      <ul id="misi-list" class="misi-list">
+        <li>Loading misi...</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
         </div>
 
         <!-- Nilai-Nilai Perusahaan -->
@@ -525,6 +512,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Semua Loaders taro bagian bawah -->
+    <!-- Visi Misi Loader -->
+    
+    <script type="module" src="./src/scripts/visiMisiLoader.js"></script>
     <!-- Hero Loader -->
     <script src="./src/scripts/heroLoader.js"></script>
   </body>

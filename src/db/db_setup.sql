@@ -32,3 +32,14 @@ ALTER TABLE promo_section ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow public read access" ON promo_section
   FOR SELECT
   USING (is_promo = true);
+
+-- Create visi_misi table
+CREATE TABLE visi_misi (
+  id SERIAL PRIMARY KEY,
+  visi TEXT,
+  misi_1 TEXT,
+  misi_2 TEXT,
+  misi_3 TEXT,
+  misi_4 TEXT,
+  misi_5 TEXT
+);
