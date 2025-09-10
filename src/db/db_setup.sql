@@ -5,9 +5,6 @@ CREATE TABLE IF NOT EXISTS hero_section (
   subtitle TEXT,
   image_url VARCHAR(500),
   image_alt VARCHAR(255),
-  cta_text VARCHAR(100),
-  cta_url VARCHAR(500),
-  is_active BOOLEAN DEFAULT true,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );

@@ -34,7 +34,6 @@ function updateHeroSection(heroData) {
   const heroTitle = document.querySelector(".hero_title");
   const heroSubtitle = document.querySelector(".hero_subtitle");
   const heroImage = document.querySelector(".hero-image");
-  const ctaButton = document.querySelector(".cta-button span");
 
   if (heroTitle && heroData.title) heroTitle.textContent = heroData.title;
   if (heroSubtitle && heroData.subtitle)
@@ -43,7 +42,6 @@ function updateHeroSection(heroData) {
     heroImage.src = heroData.image_url;
     heroImage.alt = heroData.image_alt || "minaperkasa";
   }
-  if (ctaButton && heroData.cta_text) ctaButton.textContent = heroData.cta_text;
 }
 
 async function loadHeroSection() {

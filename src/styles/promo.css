@@ -1,7 +1,7 @@
 .promo_section {
   display: none; /* default hidden */
   height: 60px;
-  background: var(--primary-gradient);
+  background: none;
   color: var(--text-white);
   overflow: hidden;
   position: relative;
@@ -11,6 +11,7 @@
 
 .promo_section.show {
   display: flex; /* tampil kalau ada class show */
+  background: var(--primary-gradient);
 }
 
 .promo_wrapper {
