@@ -43,9 +43,9 @@
   background-image: url("../images/sh-tentang-kami.png");
 }
 
-/* Khusus halaman blog */
-.sub-hero-blog {
-  background-image: url("../images/sh-blog.png");
+/* Khusus halaman berita */
+.sub-hero-berita {
+  background-image: url("../images/sh-berita.png");
 }
 
 /* Khusus halaman kontak */

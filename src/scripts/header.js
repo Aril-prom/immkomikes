@@ -25,9 +25,12 @@ class HeaderManager {
     } else if (file === "tentang-kami.html") {
       this.setActivePage("tentang");
       document.title = "Tentang Kami - Minaperkasa";
-    } else if (file === "blog.html") {
-      this.setActivePage("blog");
-      document.title = "Blog - Minaperkasa";
+    } else if (file === "berita.html") {
+      this.setActivePage("berita");
+      document.title = "Berita - Minaperkasa";
+    } else if (file === "berita-detail.html") {
+      this.setActivePage("berita");
+      document.title = "Kontak - Minaperkasa";
     } else if (file === "kontak.html") {
       this.setActivePage("kontak");
       document.title = "Kontak - Minaperkasa";
@@ -306,7 +309,7 @@ Simple config-based system:
 - headerManager.updateCTA({text: 'New CTA'}) - Update CTA
 - headerManager.getConfig() - Get current config
 
-Navigation pages: beranda, produk, tentang, blog, kontak
+Navigation pages: beranda, produk, tentang, berita, kontak
     `);
 });
 

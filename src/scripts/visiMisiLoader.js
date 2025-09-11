@@ -1,33 +1,32 @@
-
+const { createClient } = supabase;
 
 const supabaseUrl = "https://sxeveitjubrsntjhgakf.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZXZlaXRqdWJyc250amhnYWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNTE2MjUsImV4cCI6MjA3MjYyNzYyNX0.lValEMgTOSSJ2JJ5jg3hRYIgwb1EVLRR_Idz0waZ0es";
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseKey =
+  " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZXZlaXRqdWJyc250amhnYWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNTE2MjUsImV4cCI6MjA3MjYyNzYyNX0.lValEMgTOSSJ2JJ5jg3hRYIgwb1EVLRR_Idz0waZ0es"; // jangan pakai service_role
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
 async function loadVisiMisi() {
+  const visiEl = document.querySelector("#visi-text");
+  const misiList = document.querySelector("#misi-list");
+
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from("visi_misi")
       .select("*")
-      .limit(1);
+      .single();
+
+    console.log("Supabase data:", data);
+    console.log("Supabase error:", error);
 
     if (error) throw error;
 
-    if (!data || data.length === 0) {
-      document.querySelector("#visi-text").textContent = "Data visi belum tersedia";
-      document.querySelector("#misi-list").innerHTML = "<li>Data misi belum tersedia</li>";
-      return;
-    }
+    // isi visi
+    visiEl.textContent = data.visi || "Data visi belum tersedia";
 
-    const visiMisi = data[0];
-
-    document.querySelector("#visi-text").textContent = visiMisi.visi;
-
-    const misiList = document.querySelector("#misi-list");
+    // isi misi
     misiList.innerHTML = "";
-
     for (let i = 1; i <= 5; i++) {
-      const misi = visiMisi[`misi_${i}`];
+      const misi = data[`misi_${i}`];
       if (misi) {
         const li = document.createElement("li");
         li.textContent = misi;
@@ -36,8 +35,9 @@ async function loadVisiMisi() {
     }
   } catch (err) {
     console.error("Error load visi misi:", err.message);
+    visiEl.textContent = "Gagal memuat data visi.";
+    misiList.innerHTML = "<li>Gagal memuat data misi.</li>";
   }
 }
 
-// Jalankan setelah DOM siap
 document.addEventListener("DOMContentLoaded", loadVisiMisi);

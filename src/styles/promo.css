@@ -32,6 +32,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   width: 50%; /* bagi dua: asli & clone */
+  margin-right: var(--spacing-xl);
 }
 
 .promo_item {

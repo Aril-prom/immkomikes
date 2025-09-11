@@ -1,0 +1,169 @@
+/* ===================
+   LIST BERITA
+   =================== */
+.berita-list-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-3xl);
+}
+
+.page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.berita-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .berita-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .berita-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.berita-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-all);
+}
+
+.berita-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.berita-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.berita-card-content {
+  padding: var(--spacing-md);
+}
+
+.berita-card-title {
+  font-size: var(--font-size-lg);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  text-decoration: none;
+  display: block;
+  font-weight: var(--font-weight-semibold);
+}
+
+.berita-card-title:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.berita-card-date {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.berita-card-excerpt {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================
+   DETAIL BERITA
+   =================== */
+.berita-container {
+  max-width: 960px;
+  margin: auto;
+  padding: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .berita-container {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Hero Section */
+.hero-berita {
+  position: relative;
+  width: 100%;
+  height: 40vh; /* default mobile */
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .hero-berita {
+    height: 66vh; /* tablet & desktop: 2/3 layar */
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  color: var(--text-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  max-width: 80%;
+}
+
+.hero-overlay h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xs);
+}
+
+.hero-overlay small {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .hero-overlay h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* Konten */
+.berita-content {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.berita-content h2 {
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+}
+
+.berita-content p {
+  margin-bottom: var(--spacing-md);
+}
