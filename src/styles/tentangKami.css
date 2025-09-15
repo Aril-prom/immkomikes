@@ -1,0 +1,56 @@
+/* Default (desktop / tablet) */
+.tentang-kami-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.tentang-kami-section img {
+  flex: 1;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tentang-kami-content {
+  flex: 1;
+}
+
+.tentang-kami-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.tentang-kami-content p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .tentang-kami-section {
+    flex-direction: column;
+    text-align: left; /* ubah jadi rata kiri */
+    padding: 2rem 1rem;
+  }
+
+  .tentang-kami-section img {
+    width: 100%; /* full width */
+    max-width: 100%; /* biar nggak kepotong */
+    border-radius: 0; /* opsional: biar full edge */
+  }
+
+  .tentang-kami-content {
+    margin-top: 1.5rem;
+  }
+}

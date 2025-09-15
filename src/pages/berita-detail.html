@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="../styles/header.css" />
     <!-- Custom CSS | Berita -->
     <link rel="stylesheet" href="../styles/berita.css" />
+    <!-- Custom CSS | Footer -->
+    <link rel="stylesheet" href="../styles/footer.css" />
 
     <!-- Header Configuration -->
     <script>
@@ -44,7 +46,48 @@
           },
           {
             label: "Produk",
-            href: "./produk.html",
+            href: "/src/pages/produk.html",
+            id: "produk",
+            active: false,
+          },
+          {
+            label: "Tentang Kami",
+            href: "/src/pages/tentang-kami.html",
+            id: "tentang",
+            active: false,
+          },
+          {
+            label: "Berita",
+            href: "/src/pages/berita.html",
+            id: "berita",
+            active: false,
+          },
+          {
+            label: "Kontak",
+            href: "/src/pages/kontak.html",
+            id: "kontak",
+            active: false,
+          },
+        ],
+        cta: {
+          text: "Hubungi Kami",
+          href: "https://wa.me/6281477023649?text=Halo%20Minaperkasa%2C%20saya%20tertarik%20untuk%20membeli%20produk",
+          icon: "fab fa-whatsapp",
+        },
+      };
+
+      // Footer Config
+      window.siteConfig = {
+        brand: {
+          name: "Minaperkasa",
+          href: "/",
+          description: "Organisasi Pengusaha Ikan Indonesia",
+        },
+        navigation: [
+          { label: "Beranda", href: "/", id: "beranda", active: true },
+          {
+            label: "Produk",
+            href: "/src/pages/produk.html",
             id: "produk",
             active: false,
           },
@@ -71,6 +114,28 @@
           text: "Pesan Sekarang",
           href: "https://wa.me/6281477023649?text=Halo%20Minaperkasa%2C%20saya%20tertarik%20untuk%20membeli%20produk",
           icon: "fab fa-whatsapp",
+        },
+        pageContent: {
+          title: "Beranda",
+          subtitle: "Halaman beranda",
+        },
+        footer: {
+          description:
+            "Minaperkasa adalah organisasi pengusaha ikan Indonesia yang berkomitmen menghadirkan produk ikan segar, berkualitas, dan bersertifikasi.",
+          socials: [
+            {
+              icon: "fab fa-instagram",
+              href: "https://instagram.com/mina_perkasa",
+            },
+            { icon: "fab fa-whatsapp", href: "https://wa.me/6281477023649" },
+            {
+              icon: "fab fa-tiktok",
+              href: "https://www.tiktok.com/@mina_perkasa1?is_from_webapp=1&sender_device=pc",
+            },
+          ],
+          navigationTitle: "Navigasi",
+          copyright:
+            "© 2025 Minaperkasa. Kelompok budidaya ikan yang dinaungi oleh Fakultas Pertanian dan Perikanan Universitas Muhammadiyah Purwokerto",
         },
       };
     </script>
@@ -122,6 +187,13 @@
     </header>
 
     <main class="berita-container">
+      <!-- Tombol Kembali -->
+      <div class="back-button-wrapper container mt-4">
+        <a href="/src/pages/berita.html" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+      </div>
+
       <!-- Hero Section -->
       <section class="hero-berita">
         <img id="heroImage" src="" alt="Hero Image" class="hero-img" />
@@ -135,6 +207,34 @@
       <article id="postContent" class="berita-content">Loading...</article>
     </main>
 
+    <!-- Footer Section -->
+    <footer class="footer_section">
+      <div class="container footer-container">
+        <!-- Brand + Deskripsi -->
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <img src="../images/logo.png" alt="logo minaperkasa" />
+            <span id="footer-brand-name"></span>
+          </a>
+          <p id="footer-description"></p>
+          <div class="footer-socials" id="footer-socials">
+            <!-- icons akan diisi JS -->
+          </div>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="footer-nav">
+          <h4 id="footer-nav-title"></h4>
+          <ul id="footer-navigation"></ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p id="footer-copyright"></p>
+      </div>
+    </footer>
+
     <!-- Markdown parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="module" src="../scripts/loaderBerita.js"></script>
@@ -145,12 +245,13 @@
     <script src="../scripts/header.js"></script>
     <script type="module" src="../scripts/berita-detail.js"></script>
 
-
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Semua Loaders taro bagian bawah -->
     <!-- Berita Loader -->
     <script src="../scripts/loaderBerita.js"></script>
+    <!-- Berita Loader -->
+    <script src="../scripts/footerLoader.js"></script>
   </body>
 </html>

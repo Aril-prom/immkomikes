@@ -16,6 +16,9 @@
   position: relative;
   z-index: 2;
 }
+.visi-misi_section {
+  display: block; /* default */
+}
 
 /* Section Header */
 .visi-misi_section .section-header {

@@ -25,7 +25,6 @@
 /* Section Header */
 .produk_section .section-header {
   margin-bottom: var(--spacing-3xl);
-  margin-top: var(--spacing-3xl);
 }
 
 .produk_section .section-title {

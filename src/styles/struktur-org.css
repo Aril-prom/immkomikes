@@ -1,0 +1,54 @@
+.struktur-section {
+  padding: 3rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.struktur-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.struktur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.struktur-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.struktur-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.struktur-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary-color);
+}
+
+.struktur-nama {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.struktur-jabatan {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin: 0;
+}

@@ -1,0 +1,55 @@
+.kontak-section {
+  padding: 3rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.kontak-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.kontak-maps {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 350px;
+}
+
+.kontak-info {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.kontak-info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.kontak-item {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .kontak-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kontak-maps {
+    min-height: 250px;
+  }
+
+  .kontak-info {
+    margin-top: 1rem;
+  }
+}
