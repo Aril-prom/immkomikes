@@ -21,22 +21,22 @@ class HeaderManager {
 
     if (file === "produk.html") {
       this.setActivePage("produk");
-      document.title = "Produk Kami - Minaperkasa";
+      document.title = "Produk Kami - Komikes";
     } else if (file === "tentang-kami.html") {
       this.setActivePage("tentang");
-      document.title = "Tentang Kami - Minaperkasa";
+      document.title = "Tentang Kami - Komikes";
     } else if (file === "berita.html") {
       this.setActivePage("berita");
-      document.title = "Berita - Minaperkasa";
+      document.title = "Berita - Komikes";
     } else if (file === "berita-detail.html") {
       this.setActivePage("berita");
-      document.title = "Kontak - Minaperkasa";
+      document.title = "Kontak - Komikes";
     } else if (file === "kontak.html") {
       this.setActivePage("kontak");
-      document.title = "Kontak - Minaperkasa";
+      document.title = "Kontak - Komikes";
     } else {
       this.setActivePage("beranda");
-      document.title = "Beranda - Minaperkasa";
+      document.title = "Beranda - Komikes";
     }
 
     console.log("Header Manager initialized with config:", this.config);
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Developer console message
   console.log(`
-🐟 Minaperkasa Header Manager Loaded! 🐟
+Komikes Header Manager Loaded! 
 
 Simple config-based system:
 - Edit window.siteConfig in HTML to change content

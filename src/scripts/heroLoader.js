@@ -1,8 +1,8 @@
 const { createClient } = supabase;
 
-const SUPABASE_URL = "https://sxeveitjubrsntjhgakf.supabase.co";
+const SUPABASE_URL = "https://foneddybfnwzngdqravs.supabase.co";
 const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZXZlaXRqdWJyc250amhnYWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNTE2MjUsImV4cCI6MjA3MjYyNzYyNX0.lValEMgTOSSJ2JJ5jg3hRYIgwb1EVLRR_Idz0waZ0es";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvbmVkZHliZm53em5nZHFyYXZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTYxNzgsImV4cCI6MjA3NDE3MjE3OH0.mxMz7ahuQp1F2CEQoQc--vXVwXAmThfKDLVsjseiXWs";
 
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -40,7 +40,7 @@ function updateHeroSection(heroData) {
     heroSubtitle.textContent = heroData.subtitle;
   if (heroImage && heroData.image_url) {
     heroImage.src = heroData.image_url;
-    heroImage.alt = heroData.image_alt || "minaperkasa";
+    heroImage.alt = heroData.image_alt || "immkomikes";
   }
 }
 

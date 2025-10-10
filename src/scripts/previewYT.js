@@ -1,51 +1,36 @@
-// previewYT.js — Versi Final dengan Fallback Gambar Default dari Supabase
-
 import { supabase } from "./supabase.js";
 
-// 🖼️ URL GAMBAR DEFAULT — GANTI DENGAN URL YANG SUDAH DIUPLOAD KE SUPABASE STORAGE
-const DEFAULT_THUMBNAIL_URL = "https://sxeveitjubrsntjhgakf.supabase.co/storage/v1/object/sign/vidio/Screenshot%202025-09-14%20084106.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzAyYThhYi0yYmZlLTRhMmEtOWZiOS02Yzc5YjI1MDVjYmMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ2aWRpby9TY3JlZW5zaG90IDIwMjUtMDktMTQgMDg0MTA2LnBuZyIsImlhdCI6MTc1NzgxNTYzMiwiZXhwIjoxNzg5MzUxNjMyfQ.2dYwkVujOgwZF5kIdwRlzqbyTQjKD66cHloA0UjK1ZU";
+// 🖼️ URL GAMBAR DEFAULT (gunakan dari Supabase Storage)
+const DEFAULT_THUMBNAIL_URL =
+  "https://sxeveitjubrsntjhgakf.supabase.co/storage/v1/object/public/vidio/default-thumbnail.png";
 
-// Fungsi ekstrak video ID dari berbagai format YouTube
-function extractYouTubeId(url) {
-  const regExp = /^.*(youtu\.be\/|v\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : null;
-}
-
+// Fungsi load video
 async function loadVideoPreview() {
   const container = document.getElementById("videoPreview");
-  container.innerHTML = `<div class="loader">Memuat video...</div>`; // Tampilkan loader
+  container.innerHTML = `<div class="loader">Memuat video...</div>`;
 
   const { data, error } = await supabase.from("video").select("*");
 
   if (error) {
-    console.error("Error dari Supabase:", error);
-    container.innerHTML = "<p style='color: red;'>❌ Gagal memuat data.</p>";
+    console.error("Error Supabase:", error);
+    container.innerHTML = "<p style='color:red;'>❌ Gagal memuat data.</p>";
     return;
   }
 
   if (!data || data.length === 0) {
-    container.innerHTML = "<p style='color: #666;'>Belum ada video yang tersedia.</p>";
+    container.innerHTML = "<p style='color:#666;'>Belum ada video tersedia.</p>";
     return;
   }
 
-
-  container.innerHTML = ""; // Kosongkan sebelum render
+  container.innerHTML = "";
 
   data.forEach((video) => {
     const videoUrl = video.link_video?.trim() || "";
-    const videoId = extractYouTubeId(videoUrl);
 
-    let thumbnailUrl = "";
-
-    // ✅ Prioritas 1: Jika link valid, ambil thumbnail YouTube
-    if (videoId) {
-      thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-    }
-    // ✅ Prioritas 2: Jika tidak ada link atau ID tidak valid, gunakan gambar default
-    else {
-      thumbnailUrl = DEFAULT_THUMBNAIL_URL;
-    }
+    // ✅ Thumbnail prioritas:
+    // 1. Jika ada kolom `thumbnail_url` di database, pakai itu
+    // 2. Jika tidak, fallback ke DEFAULT_THUMBNAIL_URL
+    const thumbnailUrl = video.thumbnail_url || DEFAULT_THUMBNAIL_URL;
 
     const card = document.createElement("a");
     card.href = videoUrl;
@@ -57,13 +42,13 @@ async function loadVideoPreview() {
       <img 
         class="video-thumb" 
         src="${thumbnailUrl}" 
-        alt="Thumbnail ${video.judul || 'Video Tanpa Judul'}" 
+        alt="Thumbnail ${video.judul || "Video"}"
         loading="lazy"
         onerror="this.src='${DEFAULT_THUMBNAIL_URL}'; this.onerror=null;"
       />
       <div class="video-info">
-        <h3 class="video-title">${video.judul || 'Judul Tidak Diketahui'}</h3>
-        <p class="video-meta">Klik untuk menonton di YouTube</p>
+        <h3 class="video-title">${video.judul || "Judul Tidak Diketahui"}</h3>
+        <p class="video-meta">Klik untuk melihat di Instagram</p>
       </div>
     `;
 

@@ -1,9 +1,9 @@
 :root {
   /* === PRIMARY COLORS === */
-  --primary-color: #2c5aa0;
-  --primary-hover: #1e3d6f;
-  --primary-light: #4a90e2;
-  --primary-gradient: linear-gradient(135deg, #2c5aa0, #4a90e2);
+  --primary-color: #781111;
+  --primary-hover: #781111;
+  --primary-light: #781111;
+  --primary-gradient: linear-gradient(135deg, #c42a2a,#781111);
 
   /* === SECONDARY COLORS === */
   --secondary-color: #333333;
@@ -21,7 +21,7 @@
   --text-secondary: #666666;
   --text-light: #999999;
   --text-white: #ffffff;
-  --text-primary-color: #2c5aa0;
+  --text-primary-color: #781111;
 
   /* === FONT SIZES === */
   --font-size-xs: 0.75rem; /* 12px */

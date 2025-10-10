@@ -1,13 +1,13 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 // Konfigurasi Supabase
-const supabaseUrl = "https://sxeveitjubrsntjhgakf.supabase.co";
+const supabaseUrl = "https://foneddybfnwzngdqravs.supabase.co";
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZXZlaXRqdWJyc250amhnYWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNTE2MjUsImV4cCI6MjA3MjYyNzYyNX0.lValEMgTOSSJ2JJ5jg3hRYIgwb1EVLRR_Idz0waZ0es";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvbmVkZHliZm53em5nZHFyYXZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTYxNzgsImV4cCI6MjA3NDE3MjE3OH0.mxMz7ahuQp1F2CEQoQc--vXVwXAmThfKDLVsjseiXWs";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Nomor WhatsApp tetap
-const nomorWA = "6281477023649";
+const nomorWA = "6282265024599";
 
 async function loadProduk() {
   try {
@@ -46,7 +46,7 @@ async function loadProduk() {
         const priceCurrent = cards[index].querySelector(".price-current");
         const priceUnit = cards[index].querySelector(".price-unit");
         if (priceCurrent) priceCurrent.textContent = item.harga;
-        if (priceUnit) priceUnit.textContent = item.satuan || "/kg";
+        if (priceUnit) priceUnit.textContent = item.satuan || "";
 
         // Update tombol WhatsApp
         const link = cards[index].querySelector(".product-cta");
