@@ -31,17 +31,18 @@ async function fetchHeroData() {
 function updateHeroSection(heroData) {
   if (!heroData) return;
 
+  const heroSection = document.querySelector(".hero_section");
   const heroTitle = document.querySelector(".hero_title");
   const heroSubtitle = document.querySelector(".hero_subtitle");
-  const heroImage = document.querySelector(".hero-image");
+
+  // Update background image
+  if (heroSection && heroData.image_url) {
+    heroSection.style.backgroundImage = `url('${heroData.image_url}')`;
+  }
 
   if (heroTitle && heroData.title) heroTitle.textContent = heroData.title;
   if (heroSubtitle && heroData.subtitle)
     heroSubtitle.textContent = heroData.subtitle;
-  if (heroImage && heroData.image_url) {
-    heroImage.src = heroData.image_url;
-    heroImage.alt = heroData.image_alt || "immkomikes";
-  }
 }
 
 async function loadHeroSection() {
